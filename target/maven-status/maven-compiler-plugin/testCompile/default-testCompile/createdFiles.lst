@@ -1,0 +1,5 @@
+ManagerServiceTest.class
+com/vacationtracker/ws/controller/ManagerControllerTest.class
+com/vacationtracker/ws/controller/EmployeeControllerTest.class
+VacationTrackerApplicationTest.class
+com/vacationtracker/ws/service/EmployeeServiceTest.class

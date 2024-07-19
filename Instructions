@@ -1,0 +1,97 @@
+# Vacation Tracker API - Setup Guide
+
+Welcome to the Vacation Tracker API project! Follow the steps below to set up and run the project on your local machine.
+
+## Prerequisites
+
+    Before you begin, ensure you have the following installed:
+
+    - [Java Development Kit (JDK) 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or higher
+    - [Maven](https://maven.apache.org/install.html)
+    - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+    - [Postman](https://www.postman.com/downloads/) (optional, for testing the API)
+
+## Step-by-Step Guide
+
+### 1. Clone the Repository
+
+    First, clone the repository
+
+    git clone <URL>
+
+### 3. Build the Project
+
+    Use Maven to build the project:
+
+    mvn clean install
+
+### 4. Run the Application
+
+    Run the Spring Boot application using Maven:
+
+    mvn spring-boot:run
+
+    Alternatively, you can run the application by executing the generated JAR file:
+
+    java -jar target/vacations-api-1-zpwlqj-1.0-SNAPSHOT.jar
+
+### 5. Access the API
+
+    Once the application is running, you can access the API at `http://localhost:8080`.
+
+### 6. Test the API
+
+You can use Postman or any other API testing tool to test the endpoints.
+I have attached a Postman Collection in the project for reference.
+Below are some example requests:
+
+{{env}} = http://localhost:8080
+
+#### Get All Vacation Requests (Managers)
+
+GET - {{env}}/vacationtracker/api/v1/managers/requests?status=PENDING
+(Optional Request Param) - status
+
+#### Get All Vacation Requests by Employee
+
+GET - {{env}}/vacationtracker/api/v1/managers/employees/<employeeId>/requests
+
+#### Get All Overlapping Requests
+
+GET - {{env}}/vacationtracker/api/v1/managers/overlapping-requests
+
+#### Process a Vacation Request
+
+POST - {{env}}/vacationtracker/api/v1/managers/requests/<requestId>
+
+#### Get All Vacation Requests By Employee (Employees)
+
+GET - {{env}}/vacationtracker/api/v1/employees/<employeeId>/requests?status=PENDING
+(Optional Request Param) - status
+
+#### Get All Remaining Vacation Days
+
+GET - {{env}}/vacationtracker/api/v1/employees/<employeeId>/remaining-days
+
+#### Create a new Vacation Request
+
+POST - {{env}}/vacationtracker/api/v1/employees/<employeeId>/requests
+
+#### Delete an existing Vacation Request
+
+DEL - {{env}}/vacationtracker/api/v1/employees/requests/<reqId>
+
+
+### 7. Stop the Application
+
+To stop the application, press `Ctrl+C` in the terminal where the application is running.
+
+## Additional Notes
+
+Swagger Documentation Link for API doc:
+
+http://localhost:8080/vacationtracker/swagger-ui.html
+
+This guide should help your team members easily set up and run the project. If you have any questions or run into issues, feel free to reach out!
+
+--- THANK YOU ----

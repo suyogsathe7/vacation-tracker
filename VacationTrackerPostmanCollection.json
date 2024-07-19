@@ -1,0 +1,278 @@
+{
+  "info": {
+    "_postman_id": "d748dc92-1c51-468f-8052-00b9e7a19228",
+    "name": "Vacation Tracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14807879"
+  },
+  "item": [
+    {
+      "name": "Manager",
+      "item": [
+        {
+          "name": "- all vacation requests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/managers/requests",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "managers",
+                "requests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- all vacation requests (filtered by status)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/managers/requests?status=PENDING",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "managers",
+                "requests"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PENDING"
+                },
+                {
+                  "key": "status",
+                  "value": "APPROVED",
+                  "disabled": true
+                },
+                {
+                  "key": "status",
+                  "value": "REJECTED",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- vacation requests by employee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/managers/employees/15/requests",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "managers",
+                "employees",
+                "15",
+                "requests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- overlapping requests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/managers/overlapping-requests",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "managers",
+                "overlapping-requests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- process vacation request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\":\"REJECTED\",\n    \"resolvedBy\": 100\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/managers/requests/874e5601-cb65-4cec-b8d0-a74ae325c592",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "managers",
+                "requests",
+                "874e5601-cb65-4cec-b8d0-a74ae325c592"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employee",
+      "item": [
+        {
+          "name": "- get vacation requests by employeeId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/employees/15/requests",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "employees",
+                "15",
+                "requests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- vacation requests by employeeId (filter by status)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/employees/9/requests?status=approved",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "employees",
+                "9",
+                "requests"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "approved"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- employees remaining days",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/employees/15/remaining-days",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "employees",
+                "15",
+                "remaining-days"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- new vacation request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vacationStartDate\": \"2024-08-10\",\n  \"vacationEndDate\": \"2024-09-05\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/employees/15/requests",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "employees",
+                "15",
+                "requests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "- vacation request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{env}}/vacationtracker/api/v1/employees/requests/874e5601-cb65-4cec-b8d0-a74ae325c592",
+              "host": [
+                "{{env}}"
+              ],
+              "path": [
+                "vacationtracker",
+                "api",
+                "v1",
+                "employees",
+                "requests",
+                "874e5601-cb65-4cec-b8d0-a74ae325c592"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
