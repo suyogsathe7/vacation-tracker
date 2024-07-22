@@ -1,0 +1,29 @@
+name: Build & Deploy Vacation Tracker App
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build-deploy:
+    name: Build and Deploy Vacation Tracker App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: 17
+
+      - name: Unit Tests
+        run: mvn -B test --file pom.xml
+
+      - name: Build the application
+        run: |
+          mvn clean
+          mvn -B package --file pom.xml
