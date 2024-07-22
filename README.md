@@ -43,14 +43,3 @@ You are expected to design any other required models and routes for your API.
 - Testing: Has the solution been adequately tested?
 - Documentation: Is the API well-documented?
 
-### CodeSubmit
-
-Please organize, design, test, and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you must submit the assignment via the assignment page.
-
-Please include steps on how to run the submitted exercise and include any additional steps required to build and run tests for the submission.
-
-Additional bonus points will be awarded for providing a URL to the API hosted on a platform.
-
-All the best and happy coding,
-
-The Dexcom Team
