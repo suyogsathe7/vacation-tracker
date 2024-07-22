@@ -1,0 +1,6 @@
+services:
+  spring-boot-app:
+    container_name: vacation-tracker
+    image: spring/vacation-tracker
+    ports:
+      - "8088:8080"

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.vacationtracker.ws.service.EmployeeServiceTest
--------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.vacationtracker.ws.service.EmployeeServiceTest
